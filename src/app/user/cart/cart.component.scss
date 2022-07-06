@@ -1,0 +1,93 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.box1 {
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  width: 250px;
+  height: 350px;
+}
+.box2 {
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  width: 250px;
+  height: 350px;
+  position: relative;
+  left: 280px;
+  top: -370px;
+}
+.box3 {
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  width: 250px;
+  height: 350px;
+  position: relative;
+  left: 550px;
+  top: -740px;
+}
+.box4 {
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  width: 250px;
+  height: 350px;
+  position: relative;
+  left: 820px;
+  top: -1110px;
+}
+.box5 {
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  width: 250px;
+  height: 350px;
+  position: relative;
+  left: 1090px;
+  top: -1480px;
+}
+img {
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+}
+h3 {
+  margin-left: 100px;
+  font-size: 20px;
+}
+.btn1 {
+  position: relative;
+  left: 50px;
+}
+.counter {
+  position: relative;
+  left: 105px;
+  top: -35px;
+}
+.btn2 {
+  position: relative;
+  left: 140px;
+  top: -72px;
+}
+.btn3 {
+  position: relative;
+  left: 42px;
+  top: -30px;
+}
