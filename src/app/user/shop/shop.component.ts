@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Food } from '../../models/food';
+import { FoodCart } from '../../models/food';
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -7,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopComponent implements OnInit {
   box1 = 'box1';
-  cartItem: number = 0;
   showMe = true;
-  cartArray: Array<{ img1: any; amt1: number; qty1: number }> = [];
-  foodArray = [
+  cartItem: number = 0;
+  cartArray: FoodCart[] = [];
+  foodArray: Food[] = [
     {
       img: '../../assets/gulab.jpg',
       amt: 100,
@@ -46,23 +47,25 @@ export class ShopComponent implements OnInit {
     this.showMe = !this.showMe;
   }
 
-  //This method is used for increament food Quentity
-  add(foodVar: any): void {
-    //console.log(f.qty);
+  //This method is used for increament food Quantity
+  add(foodVar: Food): void {
+    //console.log(foodVar.qty);
     if (foodVar.qty !== 10) {
       foodVar.qty = foodVar.qty + 1;
     }
   }
 
-  //This method is used for decreament food Quentity
-  minus(foodVar: any): void {
+  //This method is used for decreament food Quantity
+  minus(foodVar: Food): void {
     if (foodVar.qty !== 1) {
       foodVar.qty = foodVar.qty - 1;
+      console.log(typeof foodVar.qty);
+      console.log(typeof foodVar);
     }
   }
 
   // this method is to add a product into the cart
-  addCart(foodVar: any) {
+  addCart(foodVar: Food) {
     this.cartItem = this.cartItem + foodVar.qty;
     this.cartArray.push({
       img1: foodVar.img,
@@ -70,5 +73,9 @@ export class ShopComponent implements OnInit {
       qty1: foodVar.qty,
     });
     return this.cartArray;
+  }
+
+  childCartData(data: number) {
+    this.cartItem = data;
   }
 }

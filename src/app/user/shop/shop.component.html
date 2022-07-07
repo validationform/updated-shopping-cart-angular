@@ -6,7 +6,7 @@
 <div *ngIf="showMe">
   <div [ngClass]="box1" *ngFor="let foodVar of foodArray">
     <img src="{{ foodVar.img }}" />
-    <h3>₹{{ foodVar.amt }}</h3>
+    <h3>{{ foodVar.amt | currency: "INR" }}</h3>
     <button class="btn1" (click)="add(foodVar)">+</button>
     <p class="counter">{{ foodVar.qty }}</p>
     <button class="btn2" (click)="minus(foodVar)">-</button>
@@ -15,7 +15,7 @@
 </div>
 <app-cart
   [shopData]="cartArray"
+  (notify)="childCartData($event)"
   [cart]="cartItem"
   *ngIf="!showMe"
-  #parent
 ></app-cart>

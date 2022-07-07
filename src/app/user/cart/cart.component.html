@@ -8,14 +8,14 @@
     </tr>
     <tr *ngFor="let food of shopData">
       <td><img src="{{ food.img1 }}" /></td>
-      <td>₹{{ food.amt1 }}</td>
+      <td>{{ food.amt1 | currency: "INR" }}</td>
       <td>
         <button class="btn1" (click)="add1(food)">+</button>
 
         <p class="counter">{{ food.qty1 }}</p>
         <button class="btn2" (click)="sub1(food)">-</button>
       </td>
-      <td>₹{{ food.amt1 * food.qty1 }}</td>
+      <td>{{ food.amt1 * food.qty1 | currency: "INR" }}</td>
     </tr>
   </table>
 </div>
